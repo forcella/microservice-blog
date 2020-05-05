@@ -7,17 +7,17 @@ const port = 4000;
 const app = express();
 app.use(bodyParser.json());
 
-let posts = {};
+const posts = {};
 
-app.get("/", (req, res) => {
+app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-app.get("/", (req, res) => {
+app.post("/posts", (req, res) => {
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;
 
-  post[id] = {
+  posts[id] = {
     id,
     title,
   };
